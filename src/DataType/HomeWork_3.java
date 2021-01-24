@@ -1,5 +1,8 @@
 package DataType;
 
+import java.util.Arrays;
+//  Date: 01/24/2021
+
 public class HomeWork_3 {
     public static void main(String[] args) {
 
@@ -13,15 +16,15 @@ public class HomeWork_3 {
          */
 
         String fullName = "Agha Azam";
-        String [] names = fullName.split(" " );
+        String[] names = fullName.split(" ");
         String firstname = names[0];
         String lastname = names[1];
         System.out.println("length of " + firstname + " is : " + firstname.length());
 
-        boolean isStartWithk =  lastname.toLowerCase().startsWith("k");
-        System.out.println("Last name '"  + lastname + "'starts with 'k': " + isStartWithk);
+        boolean isStartWithk = lastname.toLowerCase().startsWith("k");
+        System.out.println("Last name '" + lastname + "'starts with 'k': " + isStartWithk);
 
-        int fNameLastIndex = firstname.length()-1;
+        int fNameLastIndex = firstname.length() - 1;
         char lastChar = firstname.charAt(fNameLastIndex);
         System.out.println("Last char present in '" + firstname + "' is: " + lastChar);
 
@@ -42,7 +45,7 @@ public class HomeWork_3 {
         int wordCount = words.length;
         System.out.println("words count: " + wordCount);
 
-        String stateReplace_r_f = myStatment.replace('r','f');
+        String stateReplace_r_f = myStatment.replace('r', 'f');
         System.out.println("state after replacment r with f :" + stateReplace_r_f);
 
 
@@ -51,9 +54,9 @@ public class HomeWork_3 {
          * Store your first name in a string variable.
          * Calculate the length of your first name, without using length() method of String class.
          */
-         String[] fNameLetters = firstname.split("");
-         int fNameLength = fNameLetters.length;
-         System.out.println("The length of first name is :" + fNameLength);
+        String[] fNameLetters = firstname.split("");
+        int fNameLength = fNameLetters.length;
+        System.out.println("The length of first name is :" + fNameLength);
 
 
         /**
@@ -74,29 +77,39 @@ public class HomeWork_3 {
          * Question-5
          * String threeWordsSentence =  "hApPY nEW yeAr";
          * sout(threeWordsSentence);  // hApPY nEW yeAr
+         *
          * // code
-         * sout(threeWordsSentence);  // Happy New Year
+         * split by(" ") to generate String Array
+         * use substring method for words[0] and convert it to the upper case and store it to the same variable ->m1
+         * use substring again to use rest of the word and convert it to the lower case and store it to the same variable -> n1
+         * add m1 and n1
+         * same way do other two parts
+         *
+         * * sout(threeWordsSentence);  // Happy New Year
+         *
          */
 
         String threewordsSentence = "HApPY nEW yeAr";
-        String[] wordsArray = threewordsSentence.toLowerCase().split(""); //HApPY nEW yeAr"
 
-        String f1 = wordsArray[0].substring(0,1).toUpperCase(); //"H"
-        String l1 = words[0].substring(1);  //"appy"
-        wordsArray[0] = f1 + l1; //"HAPPY"
-
-        String f2 = wordsArray[1].substring(0,1).toUpperCase(); //"N"
-        String l2 = words[1].substring(1);  //"ew"
-        wordsArray[0] = f2 + l2;  //"NEW"
+        String[] wordsArray = threewordsSentence.split(" "); //HApPY nEW yeAr"
+        System.out.println(wordsArray);
 
 
-        String f3 = wordsArray[2].substring(0,1).toUpperCase(); //"Y"
-        String l3 = words[2].substring(1);  //"ear"
-        wordsArray[2] = f3 + l3;  //"YEAR"
+        String m1 = wordsArray[0].substring(0,1).toUpperCase(); //"H"
+        String n1 = wordsArray[0].substring(1).toLowerCase();  //"appy"
+        words[0] = m1+n1;
 
-        threewordsSentence = words[0] + " " + words[1] + " " + words[2];
-        System.out.println(threewordsSentence);
+        String m2 = wordsArray[1].substring(0,1).toUpperCase(); //"N"
+        String n2 = wordsArray[1].substring(1).toLowerCase();  //"ew"
+        words[1] = m2 + n2;  //"New"
 
+
+        String m3 = wordsArray[2].substring(0,1).toUpperCase(); //"Y"
+        String n3 = wordsArray[2].substring(1).toLowerCase();  //"ear"
+        words[2] = m3 + n3;  //"Year"
+
+
+        /* System.out.println( Arrays.toString (wordsArray[0] + " " + wordsArray[1] + " " + wordsArray[2]);     (Please suggest how to write Array print command) */
 
         /**
          * Question-6
@@ -114,13 +127,21 @@ public class HomeWork_3 {
          sout (a+b+c);
          */
 
-        String lab = " Lab sessIONS cLAsses";
-        String[] afterSplitBy = lab.split(" ");
-        System.out.println(" Array direct variable: " + afterSplitBy);
+        String threeWords =  "Lab sessIONS clAsses";
+
+        String[] word2 =  threeWords.split(" ");
+        String a1 = word2[0].toUpperCase();
+        char a = a1.charAt(0);
 
 
+        String a2 = word2[1].toUpperCase();
+        char b = a2.charAt(0);
 
 
+        String a3 = word2[2].toUpperCase();
+        char c = a3.charAt(0);
+
+        System.out.println("The abbreviation of Lab sessIONS clAsses is: " + a+b+c );
 
     }
 }
